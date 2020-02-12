@@ -1,5 +1,5 @@
 const store = require('./store');
-
+const mongo = require('./mongo')
 function addMessage(user, message) {
     return new Promise((resolve, reject) => {
         if (!user || !message) {
@@ -23,9 +23,11 @@ function addMessage(user, message) {
 function getMessage() {
     return new Promise((resolve, reject) => {
         resolve(store.list());
+        
     })
 }
 
 module.exports = {
     addMessage,
+    getMessage
 };

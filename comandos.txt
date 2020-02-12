@@ -1,5 +1,17 @@
 npm i -g express
 npm i -g nodemon
 npm i body-parser
+npm i mongodb
+npm i dotenv
+npm i mongoose
 
 nodemon server.js
+
+
+
+MongoAtlas
+
+User=db_user_platzivideos
+Pass=12Warcr7y685
+
+mongodb+srv://db_user_platzivideos:<password>@cluster0-kjwqd.mongodb.net/test?retryWrites=true&w=majority

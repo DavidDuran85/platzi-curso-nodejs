@@ -1,3 +1,4 @@
+//mocks => arreglos que simulan el funcionamiento de inserts y selects de BD
 const list = [];
 
 function addMessage(message){
