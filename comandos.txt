@@ -1,0 +1,5 @@
+npm i -g express
+npm i -g nodemon
+npm i body-parser
+
+nodemon server.js
