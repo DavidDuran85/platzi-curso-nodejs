@@ -1,5 +1,4 @@
 const store = require('./store');
-const mongo = require('./mongo')
 function addMessage(user, message) {
 	return new Promise((resolve, reject) => {
 		if (!user || !message) {
@@ -29,8 +28,8 @@ function getMessage(filterUser) {
 
 function updateMessage(id, message){
 	return new Promise( async (resolve, reject) => {
-		console.log(id);
-		console.log(message);
+		//console.log(id);
+		//console.log(message);
 		if( !id || !message){
 			reject('Invalid data');
 			return false;
@@ -40,8 +39,26 @@ function updateMessage(id, message){
 	})
 }
 
+function deleteMessage(id){
+	//console.log(id);
+	return new Promise( (resolve, reject) => {
+		if(!id){
+			reject('Id invalido');
+			return false;
+		}
+		store.remove(id)
+		.then( () => {
+			resolve();
+		})
+		.catch( e => {
+			reject(e);
+		})
+	})
+}
+
 module.exports = {
 	addMessage,
 	getMessage,
-	updateMessage
+	updateMessage,
+	deleteMessage
 };

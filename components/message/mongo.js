@@ -1,4 +1,4 @@
-const { MongoClient, ObjectId } = require('mongodb');
+/*const { MongoClient, ObjectId } = require('mongodb');
 const config = require('../../config')
 
 const USER = encodeURIComponent(config.dbUser);
@@ -29,3 +29,4 @@ class MongoLib{
 
 module.exports =  MongoLib
 
+*/
