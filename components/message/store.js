@@ -1,23 +1,6 @@
 //mocks => arreglos que simulan el funcionamiento de inserts y selects de BD
 //const list = [];
-const db = require('mongoose'); 
 const Model = require('./model');
-const configParam = require('../../config')
-
-const USER = encodeURIComponent(configParam.config.dbUser);
-const PASSWORD = encodeURIComponent(configParam.config.dbPassword);
-const DB_NAME = configParam.config.dbName;
-const DB_HOST = configParam.config.dbHost;
-//const MONGO_URI = `mongodb+srv://${USER}:${PASSWORD}@${config.dbHost}:${config.dbPort}/${DB_NAME}?retryWrites=true&w=majority`;
-const MONGO_URI = `mongodb+srv://${USER}:${PASSWORD}@${DB_HOST}/${DB_NAME}?retryWrites=true&w=majority`;
-
-db.Promise = global.Promise;
-//db.connect('mongodb+srv://user:user1234@cluster0-kjwqd.mongodb.net/telegrom?retryWrites=true&w=majority', {
-db.connect(MONGO_URI, {
-		useNewUrlParser:true,
-		useUnifiedTopology: true
-});
-console.log('[db] Conectada con exito');
 
 function addMessage(message){
 	//list.push(message);
